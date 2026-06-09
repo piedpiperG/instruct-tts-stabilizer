@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+title: "Stabilizing Instruction Supervision for Instruct-TTS via Controllable Diversification and Drift Filtering"
+message: "If you use this work, please cite the Interspeech 2026 paper."
+type: conference-paper
+authors:
+  - family-names: Geng
+    given-names: Yizhong
+  - family-names: Mao
+    given-names: Kecan
+  - family-names: Li
+    given-names: Qifei
+  - family-names: Wang
+    given-names: Cong
+  - family-names: Gao
+    given-names: Yingming
+  - family-names: Wang
+    given-names: Ruimin
+  - family-names: Wang
+    given-names: Chunfeng
+  - family-names: Li
+    given-names: Hao
+  - family-names: Li
+    given-names: Ya
+conference:
+  name: Interspeech 2026
+year: 2026
+url: "https://piedpiperg.github.io/instruct-tts-stabilizer/"

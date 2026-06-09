@@ -1,0 +1,10 @@
+zh_0|1|请按以下风格说这句话："希望你以后能够做的比我还好用。他不行了,都怪我害了他,他就相信您叶老师,您救救他吧。"。风格要求：像一位在深夜单独打电话寻求朋友原谅的青年,声音紧张且略带哭腔。|/workspace/gengyizhong/projects/VoxInstruct/ref_wav/zero_shot_prompt.wav
+zh_2|1|请按以下风格说这句话："希望你以后能够做的比我还好用。而我们希望这档节目就是这样一双翅膀能带着孩子们在科学的天空里翱翔。品质、智慧合约，让汽车驱动梦想。本节目由东风汽车独家冠名播出。"。风格要求：用坚定且富有节奏感的声音,在紧张的节目录制中主持现场环节。|/workspace/gengyizhong/projects/VoxInstruct/ref_wav/zero_shot_prompt.wav
+zh_10|1|请按以下风格说这句话："希望你以后能够做的比我还好用。是问他怎么发奋图强,怎么改过自新。我们这个所谓的文明社会,竟然可以不人道地继续监禁一个想改过自新的年轻人,这样公平吗?你们所谓的酌情终身,其实只是一个逃避责任,明哲保身,和无限期地监禁他们的一个借口。"。风格要求：请用一种正直无畏的嗓音,语调起伏更剧烈,标准普通话,强调重音时充满激情,让人感受到强烈的不满与愤慨。|/workspace/gengyizhong/projects/VoxInstruct/ref_wav/zero_shot_prompt.wav
+zh_15|1|请按以下风格说这句话："希望你以后能够做的比我还好用。抗日的烽火燃遍了全中国法陆军在各县坚持战斗刘胡兰在这艰苦的年月里锻炼了自己。"。风格要求：用一种坚定自信的态度,就像是新闻播报员在电视上发表重要消息那样的语气。|/workspace/gengyizhong/projects/VoxInstruct/ref_wav/zero_shot_prompt.wav
+zh_20|1|请按以下风格说这句话："希望你以后能够做的比我还好用。在井坡族有一项非常传统的特色的美食，它叫做绿叶宴。今天我估计我能吃着，为什么呢？你看那有两个姑娘，正在那采树叶呢，就是做绿叶宴用的，咱过去问问去。"。风格要求：保持流畅的节奏,像是和观众分享你最爱的秘密食谱。|/workspace/gengyizhong/projects/VoxInstruct/ref_wav/zero_shot_prompt.wav
+zh_25|1|请按以下风格说这句话："希望你以后能够做的比我还好用。等你这乌龟准备好啊，它的鼻子都可以碰到地了。"。风格要求：外公送的玩具车不小心掉进泥里,大声惋惜又忍不住偷笑。|/workspace/gengyizhong/projects/VoxInstruct/ref_wav/zero_shot_prompt.wav
+zh_30|1|请按以下风格说这句话："希望你以后能够做的比我还好用。陛下曾经表示要坚决拥护，甩开勘探，可是就是他破了龙虎滩和无名弟子俩。"。风格要求：播放时的语气要像义正词严的揭发者,声音低沉,但在强调时明显拔高,充满力量。|/workspace/gengyizhong/projects/VoxInstruct/ref_wav/zero_shot_prompt.wav
+zh_31|1|请按以下风格说这句话："希望你以后能够做的比我还好用。爸爸爸爸，王老师来了。"。风格要求：就像幼儿期的小孩发现了一个有趣的秘密,迫不及待地用快而急促的语速告诉别人。|/workspace/gengyizhong/projects/VoxInstruct/ref_wav/zero_shot_prompt.wav
+zh_32|1|请按以下风格说这句话："希望你以后能够做的比我还好用。大伙挑和你的时候，你又和你砸人。"。风格要求：毫不犹豫地揭露真相的抗议者。|/workspace/gengyizhong/projects/VoxInstruct/ref_wav/zero_shot_prompt.wav
+zh_33|1|请按以下风格说这句话："希望你以后能够做的比我还好用。我们这代人相信你们一定会飞起来，而且飞得更高更远。飞到我们这代人没有去过的地方。飞到我们这代人没有去过的地方。"。风格要求：像是在大舞台上向人群演讲,前面部分沉稳有力,后面逐渐高亢,最后充满激情的号召。|/workspace/gengyizhong/projects/VoxInstruct/ref_wav/zero_shot_prompt.wav
