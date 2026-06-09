@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "instruct-tts-stabilizer"
+version = "0.1.0"
+description = "Data-centric instruction supervision stabilization tools for Instruct-TTS."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Yizhong Geng" }
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+its-generate = "instruct_tts_stabilizer.diversify.generate:main"
+its-score = "instruct_tts_stabilizer.filter.score:main"
+its-filter = "instruct_tts_stabilizer.filter.apply_filter:main"
+its-perturb = "instruct_tts_stabilizer.perturb.audio:main"
+its-manifest = "instruct_tts_stabilizer.manifests.build:main"
+its-demo = "instruct_tts_stabilizer.demo.build_demo:main"
+its-eval = "instruct_tts_stabilizer.eval.text_metrics:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

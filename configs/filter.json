@@ -1,0 +1,6 @@
+{
+  "threshold": 5,
+  "vote_times": 3,
+  "borderline_note": "Rows with score <= threshold are treated as drifted; repeated scores can be used for self-consistency voting."
+}
+

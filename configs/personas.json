@@ -1,0 +1,47 @@
+{
+  "personas": [
+    {
+      "id": "plain",
+      "name": "普通要求风格",
+      "description": "A direct user request with minimal decoration.",
+      "prompt": "保持普通用户的自然请求方式，只转换说法，不改变原始指令含义。",
+      "offline_template": "请{instruction}。"
+    },
+    {
+      "id": "beijing",
+      "name": "北京话风格",
+      "description": "A Beijing-flavored request with polite colloquial phrasing.",
+      "prompt": "转换成带有北京日常口气的请求，允许使用儿化、您受累、劳驾等表达，但必须保留原指令含义。",
+      "offline_template": "劳驾您受累，{instruction}，带点京味儿。"
+    },
+    {
+      "id": "dongbei",
+      "name": "东北话风格",
+      "description": "A Northeastern colloquial user style.",
+      "prompt": "转换成东北日常口气的请求，可使用咋整、整两句等表达，但不能把自己代入执行内容。",
+      "offline_template": "帮我整一下，{instruction}。"
+    },
+    {
+      "id": "gentle",
+      "name": "撒娇的说法",
+      "description": "A soft, pleading request style.",
+      "prompt": "转换成轻柔撒娇式请求，可使用嘛、啦、拜托等语气词，但仍然必须是对 TTS 的控制指令。",
+      "offline_template": "拜托啦，{instruction}嘛。"
+    },
+    {
+      "id": "socially_careful",
+      "name": "社恐委婉风格",
+      "description": "A cautious and indirect user style.",
+      "prompt": "转换成委婉、谨慎、不打扰别人的请求方式，但不要弱化或改变原指令。",
+      "offline_template": "方便的话，可以{instruction}吗？"
+    },
+    {
+      "id": "mixed_en",
+      "name": "中英混说风格",
+      "description": "A mixed Chinese-English user style.",
+      "prompt": "转换成自然的中英混说请求，允许少量英文词汇，但核心属性和专有名词必须保留。",
+      "offline_template": "please 帮我{instruction}。"
+    }
+  ]
+}
+

@@ -1,4 +1,17 @@
 /demopage/
 /index.html
 /instruct-tts-stabilizer.pdf
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+outputs/
+data/
+examples/audio/
 

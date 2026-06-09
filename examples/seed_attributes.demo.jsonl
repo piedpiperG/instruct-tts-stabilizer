@@ -1,0 +1,5 @@
+{"id":"seed_accent_0001","category":"用四川话说","slot_type":"accent","attributes":{"accent":"四川话"},"required_terms":["四川话"]}
+{"id":"seed_speaker_0001","category":"模仿电台DJ","slot_type":"speaker","attributes":{"speaker_style":"电台DJ"},"required_terms":["电台DJ"]}
+{"id":"seed_emotion_0001","category":"请用开心的语气说","slot_type":"emotion","attributes":{"emotion":"开心"},"required_terms":["开心"]}
+{"id":"seed_prosody_0001","category":"语速慢","slot_type":"prosody","attributes":{"speed":"slow"},"required_terms":["语速慢"]}
+

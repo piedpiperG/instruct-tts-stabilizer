@@ -1,0 +1,23 @@
+{
+  "constraints": [
+    {
+      "id": "short",
+      "name": "短句",
+      "instruction": "生成短句子，尽量简单，不超过两句话。",
+      "max_chars": 28
+    },
+    {
+      "id": "medium",
+      "name": "中等长度",
+      "instruction": "生成两到四句话，句式简单但表达完整。",
+      "max_chars": 64
+    },
+    {
+      "id": "long",
+      "name": "长句",
+      "instruction": "生成较长句子，至少三句，允许更复杂的用户表达。",
+      "max_chars": 160
+    }
+  ]
+}
+

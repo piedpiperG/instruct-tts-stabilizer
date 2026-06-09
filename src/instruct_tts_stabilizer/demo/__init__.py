@@ -1,0 +1,2 @@
+"""Demo-page asset builders."""
+

@@ -1,0 +1,5 @@
+{"id":"seed_accent_0001","seed_id":"seed_accent_0001","text":"欢迎来到今天的节目。","audio_path":"examples/audio/seed_accent_0001.wav"}
+{"id":"seed_speaker_0001","seed_id":"seed_speaker_0001","text":"接下来为您播放一段音乐。","audio_path":"examples/audio/seed_speaker_0001.wav"}
+{"id":"seed_emotion_0001","seed_id":"seed_emotion_0001","text":"今天真是美好的一天。","audio_path":"examples/audio/seed_emotion_0001.wav"}
+{"id":"seed_prosody_0001","seed_id":"seed_prosody_0001","text":"请大家保持安静。","audio_path":"examples/audio/seed_prosody_0001.wav"}
+
