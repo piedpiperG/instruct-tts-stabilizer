@@ -1,16 +1,130 @@
+<div align="center">
+
 # Instruct-TTS Stabilizer
 
-Code, project page, and audio demos for the Interspeech 2026 paper:
+### Stabilizing Instruction Supervision for Instruct-TTS via Controllable Diversification and Drift Filtering
 
-**Stabilizing Instruction Supervision for Instruct-TTS via Controllable Diversification and Drift Filtering**
+**Interspeech 2026**
 
-- Project page: https://piedpiperg.github.io/instruct-tts-stabilizer/
-- Paper PDF: `docs/instruct-tts-stabilizer.pdf`
-- Demo assets: `docs/demopage/`
+Yizhong Geng, Kecan Mao, Qifei Li, Cong Wang, Yingming Gao, Ruimin Wang, Chunfeng Wang, Hao Li, and Ya Li
 
-This repository open-sources the data-centric recipe behind the paper. The
-main idea is to stabilize the label-to-instruction pipeline before supervised
-fine-tuning:
+<p>
+  <a href="https://piedpiperg.github.io/instruct-tts-stabilizer/">
+    <img alt="Project Page" src="https://img.shields.io/badge/Project%20Page-Open-0f766e?style=for-the-badge">
+  </a>
+  <a href="https://piedpiperg.github.io/instruct-tts-stabilizer/instruct-tts-stabilizer.pdf">
+    <img alt="Paper PDF" src="https://img.shields.io/badge/Paper-PDF-b91c1c?style=for-the-badge">
+  </a>
+  <a href="https://piedpiperg.github.io/instruct-tts-stabilizer/#audio-demos">
+    <img alt="Audio Demos" src="https://img.shields.io/badge/Audio-Demos-2563eb?style=for-the-badge">
+  </a>
+  <a href="https://interspeech2026.org/">
+    <img alt="Interspeech 2026" src="https://img.shields.io/badge/Interspeech-2026-7c3aed?style=for-the-badge">
+  </a>
+  <a href="LICENSE">
+    <img alt="License" src="https://img.shields.io/badge/License-MIT-111827?style=for-the-badge">
+  </a>
+</p>
+
+<p>
+  <a href="#showcase">Showcase</a> |
+  <a href="#pipeline">Pipeline</a> |
+  <a href="#quick-start">Quick Start</a> |
+  <a href="#online-llm-generation-and-filtering">LLM Filtering</a> |
+  <a href="#citation">Citation</a>
+</p>
+
+<img src="docs/main_pic.png" alt="Method overview" width="96%">
+
+</div>
+
+## Highlights
+
+Instruct-TTS systems often turn structured labels into natural-language
+instructions with LLM rewriting. The paper shows that unconstrained rewriting
+can introduce supervision-corrupting semantic drift. This repository releases
+the data-centric stabilization recipe behind the paper:
+
+<table>
+  <tr>
+    <td align="center"><b>40.4% -> 15.4%</b><br>semantic drift after constrained rewriting</td>
+    <td align="center"><b>34.5 / 51.0 -> 56.4</b><br>instruction-following accuracy</td>
+    <td align="center"><b>4.16 / 4.16</b><br>human NMOS / CMOS for the full recipe</td>
+  </tr>
+</table>
+
+The method stabilizes instruction supervision through three complementary
+pieces:
+
+- **Controllable diversification**: expand instructions across persona and
+  sentence-pattern constraints instead of relying on vague prompts.
+- **Drift filtering**: score and reject rewrites that execute the role, assume
+  the role, or silently change labels.
+- **Attribute-aligned supervision**: pair pitch, speed, and volume
+  perturbations with natural-language prompts.
+
+## Showcase
+
+The examples below are real samples from the public demo set. Each row links to
+the online audio rendered by the current project page.
+
+<table>
+  <tr>
+    <th width="24%">Scenario</th>
+    <th width="34%">Instruction</th>
+    <th width="42%">Listen</th>
+  </tr>
+  <tr>
+    <td>
+      <b>Urgent pleading call</b><br>
+      <sub>Text: 他不行了,都怪我害了他...</sub>
+    </td>
+    <td>
+      <b>RP</b>: 像一位在深夜单独打电话寻求朋友原谅的青年,声音紧张且略带哭腔。
+    </td>
+    <td>
+      <a href="https://piedpiperg.github.io/instruct-tts-stabilizer/demopage/base/RP/zh_0.wav">Base</a> ·
+      <a href="https://piedpiperg.github.io/instruct-tts-stabilizer/demopage/sft/RP/zh_0.wav">SFT</a> ·
+      <a href="https://piedpiperg.github.io/instruct-tts-stabilizer/demopage/voxinstruct/RP/zh_0.wav">VoxInstruct</a> ·
+      <a href="https://piedpiperg.github.io/instruct-tts-stabilizer/demopage/full/RP/zh_0.wav"><b>Full Recipe</b></a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Excited child voice</b><br>
+      <sub>Text: 爸爸爸爸，王老师来了。</sub>
+    </td>
+    <td>
+      <b>DSD</b>: 声音应展现稚嫩音质,语气急切兴奋,句尾明显加快语速,整体语调上扬。
+    </td>
+    <td>
+      <a href="https://piedpiperg.github.io/instruct-tts-stabilizer/demopage/base/DSD/zh_31.wav">Base</a> ·
+      <a href="https://piedpiperg.github.io/instruct-tts-stabilizer/demopage/sft/DSD/zh_31.wav">SFT</a> ·
+      <a href="https://piedpiperg.github.io/instruct-tts-stabilizer/demopage/voxinstruct/DSD/zh_31.wav">VoxInstruct</a> ·
+      <a href="https://piedpiperg.github.io/instruct-tts-stabilizer/demopage/full/DSD/zh_31.wav"><b>Full Recipe</b></a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Rallying stage speech</b><br>
+      <sub>Text: 我们这代人相信你们一定会飞起来...</sub>
+    </td>
+    <td>
+      <b>APS</b>: 壮年、坚实有力、后半段逐渐高昂,结尾充满激情的号召。
+    </td>
+    <td>
+      <a href="https://piedpiperg.github.io/instruct-tts-stabilizer/demopage/base/APS/zh_33.wav">Base</a> ·
+      <a href="https://piedpiperg.github.io/instruct-tts-stabilizer/demopage/sft/APS/zh_33.wav">SFT</a> ·
+      <a href="https://piedpiperg.github.io/instruct-tts-stabilizer/demopage/voxinstruct/APS/zh_33.wav">VoxInstruct</a> ·
+      <a href="https://piedpiperg.github.io/instruct-tts-stabilizer/demopage/full/APS/zh_33.wav"><b>Full Recipe</b></a>
+    </td>
+  </tr>
+</table>
+
+For the full listening table, open the
+<a href="https://piedpiperg.github.io/instruct-tts-stabilizer/#audio-demos"><b>interactive audio demo page</b></a>.
+
+## Pipeline
 
 ```text
 structured labels
@@ -21,10 +135,6 @@ structured labels
   -> evaluation and demo page
 ```
 
-## What Is Included
-
-The repository is organized around the three mechanisms in the paper.
-
 | Paper component | Code |
 | --- | --- |
 | Controllable instruction diversification | `src/instruct_tts_stabilizer/diversify/` |
@@ -34,11 +144,11 @@ The repository is organized around the three mechanisms in the paper.
 | Demo-page asset building | `src/instruct_tts_stabilizer/demo/` |
 | CER helper | `src/instruct_tts_stabilizer/eval/` |
 
-The code is intentionally data-provider agnostic. It does not require the
-private speech corpus used in the paper. You can run the same recipe on your
-own speech clips and structured labels.
+The code is data-provider agnostic. It does not require the private speech
+corpus used in the paper; you can run the recipe on your own speech clips and
+structured labels.
 
-## Installation
+## Quick Start
 
 ```bash
 git clone git@github.com:piedpiperG/instruct-tts-stabilizer.git
@@ -49,7 +159,7 @@ python -m pip install -e .
 Audio perturbation uses `ffmpeg` for pitch, speed, and volume changes. The
 other pipeline stages use only the Python standard library.
 
-## Quick Offline Smoke Test
+## Offline Smoke Test
 
 The offline path uses deterministic templates and a lightweight heuristic
 verifier, so it works without API keys.
@@ -94,8 +204,6 @@ python scripts/build_sft_manifest.py \
 
 The LLM client is OpenAI-compatible and can be used with OpenAI, DeepSeek,
 Qwen-compatible gateways, or a local vLLM server.
-
-Examples:
 
 ```bash
 export OPENAI_API_KEY=...
